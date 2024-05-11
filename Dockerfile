@@ -5,7 +5,8 @@ ARG PASSWORD=${PASSWORD}
 ARG PORT=10568
 
 # Install  and setup config file
-ADD config.json /etc/shadowsocks-rust/config.json
+ADD config.json /etc/shadowsocks-rust/my_config.json
 ADD entrypoint.sh /entrypoint.sh
 
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD [ "ssserver", "--log-without-time", "-c", "/etc/shadowsocks-rust/my_config.json" ]
