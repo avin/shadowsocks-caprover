@@ -2,7 +2,7 @@ FROM ghcr.io/shadowsocks/ssserver-rust:v1.18.4
 
 # Define default ARG values
 ARG PASSWORD
-ARG PORT=10568
+ARG PORT=10567
 ENV PASSWORD=$PASSWORD
 ENV PORT=$PORT
 
